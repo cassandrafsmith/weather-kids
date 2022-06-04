@@ -1,0 +1,45 @@
+.weather-container{
+    background-color: #5463FF;
+    box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
+    border-radius: 15px;
+    height: 525px;
+    width: 80%;  
+    position: relative;  
+    padding: 15px;
+}
+
+/* adjust after choosing font */
+.weather-header h1{
+    color: #FFC300;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.weather-header div{
+    border-bottom:2px solid white;
+    width: 40%;
+    margin: auto;
+}
+
+.weather-header button {
+    background-color: transparent;
+    border: none;
+    color: white;    
+}
+
+.search-input {
+    background-color: transparent;
+    border: none;
+    /* outline: none; */
+    padding: 4px;
+    width: 100%;
+    color: white;
+    font-size:1rem;    
+}
+
+.search-input::-webkit-input-placeholder {
+    color: white;
+    font-size: 1.3em;
+    opacity: 0.5;    
+}
+

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import '../Styles/Weather.css';
+import '../Styles/WeatherContainer.css';
 import WeatherDisplay from './WeatherDisplay';
+import ImageDisplay from './ImageDisplay';
 
 function WeatherContainer() {
     //const API_KEY = process.env.API_KEY;
@@ -42,11 +43,11 @@ function WeatherContainer() {
             console.log('enter pressed');
             getWeatherData();
         }
+        //add functionality for user deleting the zipcode...
     }
 
     //event handler for button click & API call
-    function getWeatherData () {
-        //if(zipcode !== searchQuery){}
+    function getWeatherData () {        
         fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${searchInfo},us&appid=${API_KEY}`)
         .then(response => response.json())
         .then(data => setWeatherData({
@@ -77,14 +78,15 @@ function WeatherContainer() {
                     <button className="material-icons" onClick={getWeatherData} onKeyPress={enterKeyPress}>search</button>
                 </div>
                 <div id= "zip-error" >
-                    {!isValidZip ? <p className="validation-message">Zipcode is Incorrect</p> : ''}
+                    {!isValidZip ? <p className="validation-message">Uh Oh! Your zipcode is Incorrect!</p> : ''}
                 </div>
             </header>
-            <div className="weather-info">
+            <section className="weather-info">
+                {weatherData.descript === null ? (
+                    '') : <ImageDisplay descript={weatherData.descript} />}            
                 {weatherData.temp === null ? (
-                <p>Let's Find Your Weather! <i className="material-icons">wb_sunny</i></p>) : <WeatherDisplay data={weatherData} /> }
-                
-            </div>
+                    <p>Let's Find Your Weather! <i className="material-icons">wb_sunny</i></p>) : <WeatherDisplay data={weatherData} /> }            
+            </section>
         </div>
     )
 }

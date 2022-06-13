@@ -10,7 +10,7 @@ import windy300 from './images/windy300.svg';
 
 function ImageDisplay(props) {
 
-    function getImage (props) {
+    const getImage = (props) => {
         if(props >= 200 && props < 300){
             return <img src={storm300} alt="smiling child holding a large yellow lightening bolt" />;
         } 

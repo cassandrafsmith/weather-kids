@@ -16,13 +16,13 @@ function WeatherContainer() {
     const [isValidZip, setIsvalidZip] = useState(true);
 
     //validate zip code
-    function validateZip(zipcode){
+    const validateZip = (zipcode) => {
         let regex = /^[0-9]{5}$/;
         return regex.test(zipcode);
     }
 
     //event handler for zipcode input
-    function updateSearchInfo(event) {       
+    const updateSearchInfo = (event) => {       
         let zipcode = event.target.value;            
         let isValid = validateZip(zipcode);
         console.log(isValid);       
@@ -35,7 +35,7 @@ function WeatherContainer() {
         }
     }
 
-    function enterKeyPress(event) {
+    const enterKeyPress = (event) => {
         if(event.key === 'Enter'){
             console.log('enter pressed');
             getWeatherData();
@@ -44,7 +44,7 @@ function WeatherContainer() {
     }
 
     //event handler for button click & API call
-    function getWeatherData () {        
+    const getWeatherData = () => {        
         fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${searchInfo},us&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => setWeatherData({
@@ -57,7 +57,7 @@ function WeatherContainer() {
     }
 
     //change the incoming kelvin temp to Fahrenheit
-    function tempChange (temp) {
+    const tempChange = (temp) => {
         return Math.floor((temp - 273.15) * 1.8 + 32);
     } 
 

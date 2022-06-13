@@ -4,8 +4,7 @@ import WeatherDisplay from './WeatherDisplay';
 import ImageDisplay from './ImageDisplay';
 
 function WeatherContainer() {
-    const apiKey = process.env.REACT_APP_API_KEY;
-    //const apiKey = 'ea12a39696773483e2b99f3196257395';
+    const apiKey = process.env.REACT_APP_API_KEY;    
     const [searchInfo, setSearchInfo] = useState('');       
     const [weatherData, setWeatherData] = useState({        
         temp: null,
@@ -15,8 +14,6 @@ function WeatherContainer() {
         id: null
     });   
     const [isValidZip, setIsvalidZip] = useState(true);
-    
-
 
     //validate zip code
     function validateZip(zipcode){

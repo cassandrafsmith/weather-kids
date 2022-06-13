@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/App.css';
-import WeatherContainer from './WeatherContainer.js';
+import WeatherContainer from './WeatherContainer';
 
 function App() {
   return (

@@ -3,3 +3,10 @@
     margin-top: 10px;
     margin-bottom: 15px;
 }
+
+.image-error{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}

@@ -4,8 +4,8 @@ import WeatherDisplay from './WeatherDisplay';
 import ImageDisplay from './ImageDisplay';
 
 function WeatherContainer() {
-    //const API_KEY = process.env.API_KEY;
-    const API_KEY = 'ea12a39696773483e2b99f3196257395';
+    const apiKey = process.env.REACT_APP_API_KEY;
+    //const apiKey = 'ea12a39696773483e2b99f3196257395';
     const [searchInfo, setSearchInfo] = useState('');       
     const [weatherData, setWeatherData] = useState({        
         temp: null,
@@ -48,7 +48,7 @@ function WeatherContainer() {
 
     //event handler for button click & API call
     function getWeatherData () {        
-        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${searchInfo},us&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${searchInfo},us&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => setWeatherData({
             temp: tempChange(data.main.temp),
@@ -72,7 +72,7 @@ function WeatherContainer() {
                     <input 
                         type="text"
                         className="search-input" 
-                        placeholder="Enter Your Zipcode" 
+                        placeholder="Zipcode" 
                         onChange={updateSearchInfo}                         
                     />
                     <button className="material-icons" onClick={getWeatherData} onKeyPress={enterKeyPress}>search</button>
@@ -82,8 +82,8 @@ function WeatherContainer() {
                 </div>
             </header>
             <section className="weather-info">
-                {weatherData.descript === null ? (
-                    '') : <ImageDisplay descript={weatherData.descript} />}            
+                {weatherData.icon === null ? (
+                    '') : <ImageDisplay id={weatherData.id} />}            
                 {weatherData.temp === null ? (
                     <p>Let's Find Your Weather! <i className="material-icons">wb_sunny</i></p>) : <WeatherDisplay data={weatherData} /> }            
             </section>

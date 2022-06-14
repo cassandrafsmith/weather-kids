@@ -1,7 +1,11 @@
 .image{
     display: block;    
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 15px;    
+}
+
+.image img{
+    display: block;
 }
 
 .image-error{

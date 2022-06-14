@@ -34,7 +34,7 @@ function WeatherContainer() {
             setIsvalidZip(false);
         }
     }
-
+    //handles 'enter' key presses
     const enterKeyPress = (event) => {
         if(event.key === 'Enter'){
             console.log('enter pressed');
@@ -70,20 +70,21 @@ function WeatherContainer() {
                         type="text"
                         className="search-input" 
                         placeholder="Zipcode" 
-                        onChange={updateSearchInfo}                         
+                        onChange={updateSearchInfo} 
+                        onKeyPress={enterKeyPress}                        
                     />
-                    <button className="material-icons" onClick={getWeatherData} onKeyPress={enterKeyPress}>search</button>
+                    <button className="material-icons" onClick={getWeatherData} >search</button>
                 </div>
                 <div id= "zip-error" >
-                    {!isValidZip ? <p className="validation-message">Uh Oh! Your zipcode is Incorrect!</p> : ''}
+                    {!isValidZip ? <p className="validation-message">Uh Oh! Incorrect zipcode!</p> : ''}
                 </div>
             </header>
-            <section className="weather-info">
+            <div className="weather-info">
                 {weatherData.icon === null ? (
                     '') : <ImageDisplay id={weatherData.id} />}            
                 {weatherData.temp === null ? (
                     <p>Let's Find Your Weather! <i className="material-icons">wb_sunny</i></p>) : <WeatherDisplay data={weatherData} /> }            
-            </section>
+            </div>
         </div>
     )
 }

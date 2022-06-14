@@ -2,7 +2,7 @@
     background-color: #5463FF;
     box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
     border-radius: 35px;    
-    height: 525px;
+    height: 70%;
     width: 80%;  
     position: relative;  
     padding: 15px;
@@ -10,9 +10,11 @@
 
 /* adjust after choosing font */
 .weather-header h1{
-    color: #FFC300;
+    font-family: 'Margarine', cursive;
+    color: #FFC300;        
     font-size: 2rem;
     text-align: center;
+    letter-spacing: .2rem;
 }
 
 .weather-header div{
@@ -56,12 +58,11 @@
 
 .weather-info{
     display: flex;
-    flex-direction: column;
-    height: 300px;
+    flex-direction: column;    
     justify-content: center;
     align-items: center;
     padding: 15px;
-    margin: 30px;
+    margin-top: 40px;
 }
 
 .weather-info i{
@@ -71,8 +72,8 @@
     animation: sun 5s infinite linear;
 }
 
-.weather-info p {
-    font-size: 1rem;
+.weather-info p {   
+    font-size: 1.2rem;
 }
 
 @keyframes sun {

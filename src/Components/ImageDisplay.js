@@ -20,18 +20,18 @@ function ImageDisplay(props) {
         else if (props >= 600 && props < 701) {
             return <img src={snow300} alt="smiling child holding a large white snowflake" />;
         }
-        else if (props >= 701 && props < 800) {
+        else if (props >= 701 && props < 800 && props !== 771) {
             return <img src={cloudy300} alt="smiling child holding a large grey cloud" />;
         }
-        else if (props === 800 || props === 801) {
-            return <img src={sunny300} alt="smiling child holding a large bright yellow sun" />;
-        } 
-        else if (props === 802) {
-            return <img src={partcloudy300} alt="smiling child holding a large white cloud" />;
-        }
-        else if (props === 803 || props === 804) {
+        else if (props === 771) {
             return <img src={windy300} alt="smiling child holding a large windy breeze" />;         
         }
+        else if (props === 800) {
+            return <img src={sunny300} alt="smiling child holding a large bright yellow sun" />;
+        } 
+        else if (props >= 801 && props <= 804) {
+            return <img src={partcloudy300} alt="smiling child holding a large white cloud" />;
+        }        
         else {
             return( 
                 <div className='image-error'>

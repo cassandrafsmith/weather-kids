@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import '../Styles/WeatherContainer.css';
+import '../Styles/Weather.css';
 import WeatherDisplay from './WeatherDisplay';
 import ImageDisplay from './ImageDisplay';
+
 
 function WeatherContainer() {
     const apiKey = process.env.REACT_APP_API_KEY;    

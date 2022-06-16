@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/ImageDisplay.css';
+import '../Styles/Weather.css';
 import cloudy300 from './images/cloudy300.svg';
 import partcloudy300 from './images/partcloud300.svg';
 import rain300 from './images/rain300.svg';

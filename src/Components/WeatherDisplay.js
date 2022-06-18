@@ -3,6 +3,7 @@ import  '../Styles/Weather.css';
 
 function WeatherDisplay(props) {
     const {temp, city, id } = props.data;
+    //const night = props.night;
 
     const getDescription = (props) => {
         if(props >= 200 && props < 300){

@@ -7,32 +7,40 @@ import snow300 from './images/snow300.svg';
 import storm300 from './images/storm300.svg';
 import sunny300 from './images/sunny300.svg';
 import windy300 from './images/windy300.svg';
+import moon300 from './images/moon300.svg';
 
 function ImageDisplay(props) {
+    console.log(props.night) 
+    console.log(props.id)       
 
     const getImage = (props) => {
-        if(props >= 200 && props < 300){
+        console.log(`in getImage. ${props.night}`)
+        
+        if(props.night === true){
+            return <img src={moon300} alt="smiling child holding a large grey moon" />;
+        }
+        else if(props.id >= 200 && props.id < 300 && !props.night){
             return <img src={storm300} alt="smiling child holding a large yellow lightening bolt" />;
         } 
-        else if (props >= 300 && props < 600) {
+        else if (props.id >= 300 && props.id < 600  && !props.night) {
             return <img src={rain300} alt="smiling child holding a large light blue raindrop" />;
         }
-        else if (props >= 600 && props < 701) {
+        else if (props.id >= 600 && props.id < 701  && !props.night) {
             return <img src={snow300} alt="smiling child holding a large white snowflake" />;
         }
-        else if (props >= 701 && props < 800 && props !== 771) {
+        else if (props.id >= 701 && props.id < 800 && props.id !== 771  && !props.night) {
             return <img src={cloudy300} alt="smiling child holding a large grey cloud" />;
         }
-        else if (props === 771) {
+        else if (props.id === 771  && !props.night) {
             return <img src={windy300} alt="smiling child holding a large windy breeze" />;         
         }
-        else if (props === 800) {
+        else if (props.id === 800  && !props.night) {
             return <img src={sunny300} alt="smiling child holding a large bright yellow sun" />;
         } 
-        else if (props >= 801 && props <= 804) {
+        else if (props.id >= 801 && props.id <= 804 && !props.night) {
             return <img src={partcloudy300} alt="smiling child holding a large white cloud" />;
         }        
-        else {
+        else{
             return( 
                 <div className='image-error'>
                     <p>Ooops!</p>
@@ -44,7 +52,7 @@ function ImageDisplay(props) {
     
     return(
         <div className="image">            
-            {getImage(props.id)}
+            {getImage(props)}
         </div>
     )
 }

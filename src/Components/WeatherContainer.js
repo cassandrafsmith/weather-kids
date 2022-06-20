@@ -17,7 +17,7 @@ function WeatherContainer() {
         name: null
     });   
     const [time, setTime] = useState({
-        time: 11        
+        time: null        
     });
     const [isValidZip, setIsvalidZip] = useState(true);
     const [isNight, setIsNight] = useState(false);
@@ -85,9 +85,10 @@ function WeatherContainer() {
         const searchTime = utc + searchOffset;
 
         const newTime = new Date(searchTime);
-        const hour = newTime.getHours();                    
+        const hour = newTime.getHours();  
+        setTime(hour);                  
           
-        checkNight(hour);      
+        checkNight(time);      
     }
 
     //funtion to find if current time is night time
